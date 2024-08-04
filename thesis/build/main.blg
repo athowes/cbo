@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: build/main.aux
+The style file: biblatex.bst
+A level-1 auxiliary file: Chapters/Chapter1.aux
+A level-1 auxiliary file: Chapters/Chapter2.aux
+A level-1 auxiliary file: Chapters/Chapter3.aux
+A level-1 auxiliary file: Chapters/Chapter4.aux
+A level-1 auxiliary file: Chapters/Chapter5.aux
+A level-1 auxiliary file: Chapters/Chapter6.aux
+Database file #1: main-blx.bib
+Database file #2: biblio.bib
+Repeated entry---line 647 of file biblio.bib
+ : @article{gramacy2016modeling
+ :                             ,
+I'm skipping whatever remains of this entry
+Biblatex version: 3.8
+(There was 1 error message)

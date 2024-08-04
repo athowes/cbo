@@ -1,0 +1,113 @@
+% Chapter 3
+
+\chapter{Acquisition functions} % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter3} 
+
+%----------------------------------------------------------------------------------------
+
+In sequential optimization, the next point in the search space to be evaluated at each stage is determined by an optimization \textit{policy} $\bm{\pi}$ which is a sequence of decision rules $\pi_n$ which map from the space of possible training data at stage $n$ to a point $\x_n \in \D$. In Bayesian optimization a GP emulator to the objective function fit on all the data available at stage $n$ is used to help inform this decision. 
+
+How should the policy $\bm{\pi}$ be chosen?
+
+\section{Optimal policies}
+
+A natural place to start is to look for a policy which is in some sense optimal. In order to find such a policy it is necessary to define a metric so that performance can be measured. The loss function regret \citep{sugden} is a sensible choice \cite{srinivas2009gaussian} for this metric. We define the \textit{instantaneous regret} at stage $n$ as the difference between the (potentially unknown) immediate reward of the optimal action $f(\x^\star)$ and the actual immediate reward received $f(\x_n)$, so that
+%
+\begin{equation}
+r_n = f(x_n) - f(\x^\star)
+\end{equation}
+%
+The \textit{cumulative regret} $R_N = \sum_{n=1}^{N} r_n$ is the sum of instantaneous regrets at each stage. \textit{Simple regret} is the instantaneous regret of the final recommendation $x^-$ of the algorithm. 
+
+Different varieties of regret are appropriate to different situations. Cumulative regret is a sensible way to measure performance in online problems such as the multi-armed bandit problem, which we introduced in section \ref{sec:bandits}. In off-line problems however there is no need to penalize poor performance during the optimization process as this would discourage exploration. Simple regret instead should be considered.
+
+As the optimization is stochastic, the optimal policy minimizes the \textit{expectation} of the simple regret. Unfortunately, such a policy is the solution to an dynamic programming problem which requires solving many nested maximizations and expectations \cite{lam2016bayesian} and is therefore intractable. Although there has been some recent work \cite{gonzalez2015glasses} \cite{lam2016bayesian} in this area, the majority of the focus has instead been on more tractable policies defined by so-called acquisition functions.
+
+\section{Acquisition functions}
+
+Acquisition functions provide a heuristic, typically myopic, measure of the utility of prospective query points. At stage $n$ to determine the next point to query $\x_{n}$, the chosen acquisition function $\alpha$ is maximized over the design space.
+%
+\begin{equation} \label{eq:acquistion}
+\x_n = \argmax_{\x\in\mathcal{X}} \alpha(\x)
+\end{equation}
+%
+In other words, the optimization policy $\bm{\pi}$ is, in a way, homogenized - each decision rule $\pi_n$ is replaced with the consultation of a particular acquisition function. That being said, although it has been omitted in equation \ref{eq:acquistion} the acquisition function may depend on the stage $n$, in some way.
+
+Many possible acquisition function have been suggested in the literature. The chosen acquisition function should effectively balance the trade-off between local and global search. To encourage local search it should be high where the posterior predictive mean is low and to encourage global search it should be high where the posterior predictive marginal variance is high.
+
+A common approach is to look for points which offer improvement over some incumbent value $\nu \in \D$, which represents the best solution found so far\footnote{Notation has been overloaded: unrelated to the smoothness parameter of the Matérn kernel}. This value $\nu$ is typically the minimum function evaluation observed so far 
+%
+\begin{equation}
+\nu = \min \{f(\x_1), \ldots, f(\x_{n-1}) \}
+\end{equation}
+%
+when observations are deterministic, or the minimum expected value of the emulator 
+%
+\begin{equation}
+\nu = \argmin_{\x\in\D} \mathbb{E}[f(\x)]
+\end{equation}
+%
+when the objective function is noisy \citep{lizotte}. We will discuss two improvement-based acquisition functions, probability of improvement and expected improvement, in the following sections \ref{sec:pi} and \ref{sec:ei}.
+
+\subsection{Probability of improvement} \label{sec:pi}
+
+Early work by \citet{kushner1964new} proposes maximizing the probability that $f(\x)$ improves on the incumbent, $\nu$. This may be calculated analytically by noting that at stage $n$ the random variable $f(\x)$ has Gaussian distribution with mean and variance given by predictive equations \ref{eq:predmean} and \ref{eq:predvar}. The GP emulator has has been conditioned on the data-set $\Da_{n-1}$, but for ease-of-exposition we will denote this mean and variance simply by $\mu(\x)$ and $\sigma(\x)$ respectively. As such, the \textit{probability of improvement} (PI) acquisition function is
+%
+\begin{equation}
+\alpha_\mathrm{PI}(\x) \equiv \mathbb{P}(f(\x) \leq \nu)
+= \Phi\left(\frac{\nu - \mu(\x)}{\sigma(\x)}\right)
+= \Phi(z(\x))
+\end{equation}
+%
+where $\Phi(\cdot)$ is the standard normal cumulative distribution function and $z(\x) = {(\nu - \mu(\x))}/{\sigma(\x)}$ is the standardization score.
+
+The drawback of this approach is that global search is often neglected because likely improvements, however infinitesimal, are favoured \cite{brochu2010interactive}. The search will move on, but only after almost exhaustively fine-tuning the current best solution. To remedy this, Kushner proposes that the minimum improvement accepted is a trade-off parameter $\xi(n)$. His idea being that $\xi(n)$ operates on a cooling schedule, starting high to encourage global search and decreasing towards zero later so that solutions are refined locally. \citet{jones2001taxonomy} describes that although performance may be impressive, the method is extremely sensitive to the choice of this parameter.
+
+\subsection{Expected improvement} \label{sec:ei}
+
+\textit{Expected improvement} (EI) \citep{mockus1974bayesian} is another natural, improvement-based, approach which overcomes some of the drawbacks of PI. As well considering the probability that $f(\x)$ improves on $\nu$, EI also takes into account the degree of that potential improvement. In particular, under the model, the improvement function $\mathrm{I}(\cdot)$ is defined to be the random variable
+%
+\begin{equation}
+\mathrm{I}(\x) \equiv \max \{0, \nu - f(\x)\}
+\end{equation}
+%
+The likelihood of attaining improvement $I > 0$ is simply Gaussian, with density
+%
+\begin{equation}
+\frac{1}{\sqrt{2\pi}\sigma(\x)} \textrm{exp} \left \{ -\frac{1}{2} \frac{(\nu - I - \mu(\x))^2}{\sigma^2(\x)} \right \}
+\end{equation} 
+
+Taking the expected value of the improvement over this density gives the expected improvement acquisition function
+%
+\begin{equation}
+\alpha_{\mathrm{EI}}(\x)
+\equiv \E[ \mathrm{I}(\x) ] 
+= \int_0^\infty I \, \frac{1}{\sqrt{2\pi}\sigma(\x)} \textrm{exp} \left \{ -\frac{1}{2} \frac{(\nu - I - \mu(\x))^2}{\sigma^2(\x)} \right \} \, dI
+\end{equation}
+%
+Using integration by parts \citep{schonlau1996global} this expression has the closed form
+%
+\begin{equation} \label{eq:ei}
+\alpha_{\mathrm{EI}}(\x) = \sigma(\x)[z(\x)\Phi(z(\x)) + \phi(z(\x))]
+\end{equation}
+%
+where $\Phi(\cdot)$ is as before and $\phi(\cdot)$ is the standard normal probability density function. 
+
+EI has attractive theoretical convergence properties \citep{bull2011convergence} and has been shown to work well in practice \citep{snoek2012practical}, for example as a part of the ``Efficient Global Optimization'' algorithm \citep{jones1998efficient}. Further, it is easy to implement and does not require setting any additional parameters. For these reasons it is often the default choice. 
+
+\subsection{Lower confidence bound}
+
+Originally studied in the the multi-armed bandit setting by \citet{lai1985asymptotically}, the \textit{lower confidence bound} (LCB) acquisition function \cite{srinivas2009gaussian} is an optimistic acquisition function which assumes a fixed probability best-case scenario occurs, and looks for the point which is best under this scenario. It is defined to be:
+%
+\begin{equation}
+\alpha_{\mathrm{LCB}}(\x) \equiv \lambda\sigma(\x) - \mu(\x)
+\end{equation}
+%
+The constant $\lambda$ is used to to explicitly balance between local search and global search by setting this fixed probability. \citet{srinivas2009gaussian} are able to show that with appropriate choice of $\lambda$ as a function of $n$ the LCB acquisition function is what is called no-regret, which means that $\lim_{N\to\infty} R_N / N = 0$, with high probability.
+
+\section{Maximizing the acquisition function} \label{maxacq}
+
+By using an acquisition function, the primary optimization problem \ref{eq:1.1} has been traded for a series of optimization problems \ref{eq:acquistion}: one for each stage. For this trade to be viable it must be easy to optimize the acquisition function. Thankfully unlike the objective function the acquisition functions all have analytic expressions which can be sampled cheaply.
+
+Various approaches have been proposed and successfully implemented in the literature. Most simplistically, the domain can be discretized and exhaustively grid-searched - which is of course how visualizations like figure \ref{fig:1ii} are produced. In this project we will use the same algorithm as was used to optimize the GP hyper-parameters - namely L-BFGS-B with random restarts.

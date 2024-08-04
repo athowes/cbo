@@ -1,0 +1,143 @@
+% Chapter 4
+
+\chapter{Constrained optimization} % Main chapter title
+
+\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter4} 
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Previously we considered the optimization problem in equation \ref{eq:1.1} where all values $\x$ in the search space $\mathcal{X}$ are valid. In constrained optimization problems this is not the case: there are a set of additional requirements, called \textit{constraints}, that $\x$ must meet for it to be considered feasible. Using a set of $K$ inequality constraints $c_k : \D \to \mathbb{R}$ this may be formulated as the constrained optimization problem:
+%
+\begin{equation} \label{eq:cop}
+\x^\star = \argmin_{\x\in\mathcal{X}} f(\x)\quad
+\mathrm{s.t.}\quad c_k(\x) \geq 0, \forall k \in \{1,...,K\}
+\end{equation}
+%
+The set of points $\x$ which satisfy each of the constraints $c_k$ is called the \textit{feasible region} $\mathcal{R}\subseteq\mathcal{X}$. Points outside the feasible region are called \textit{infeasible}.
+
+Constraints may be of two types, \textit{coupled} or \textit{decoupled}. Coupled constraints may only be evaluated jointly alongside the objective function. That is, when the objective function has been queried the user also learns the value of the constraint function. Decoupled constraints, on the other hand, can be evaluated independently of the objective. This is more of a challenge since if each constraint is decoupled then at every stage there is a choice of $K+1$ functions (the $K$ constraints plus the the objective function $f$) which may be queried.
+
+We consider that, in general like the objective function, the constraints are: not necessarily linear or convex \ref{itm:p1}; black-box \ref{itm:p2}; and expensive to evaluate individually \ref{itm:p3} in the decoupled case. In addition, the constraints may be noisy \ref{itm:p4}, which will be discussed in section \ref{sec:nconst}. Without these properties, it may be possible to cheaply find the feasible region $\mathcal{R}$ and to proceed with unconstrained optimization on this reduced search space.
+
+The addition of constraints considerably widens the scope of problems which may be considered compared with the unconstrained case. Returning to a previous example, when optimizing the hyper-parameters of a machine-learning model there may be settings which cause the model to diverge, so the optimization may need to be constrained. Other examples include optimizing CPU speed of a processor whilst restricting power usage below some threshold or optimizing the yield of a chemical process whilst limiting the amount of unwanted by-products which are produced. 
+
+Some authors \cite{gardner2014bayesian} \cite{letham2017constrained} also present constrained optimization as a proxy method for dealing with trade-offs. In their paper about optimizing systems at Facebook, \citet{letham2017constrained} state that:
+%
+\begin{quotation}
+`` ...there are almost always trade-offs involved in optimizing real systems: improving the quality of images may result in increased data usage; increasing cache sizes may improve the speed of a mobile application, but decrease reliability on some devices; optimizing click-through rates may result in decreases in quality.''
+\end{quotation}
+%
+In general, these problems may perhaps more generally be described as multi-objective optimization problems in which the output $\y$ has dimension greater than one. Of course there is no strict ordering for points in $\mathbb{R}^2$ and above, and so the aim of multi-objective optimization is to approximate the Pareto set of non-dominated points \cite{dt3}. For example, a more complete treatment of a chemical yield optimization with constrained unwanted by-products may find the highest yield possible for any given acceptable amount of by-product. The simplification is possible because constrained optimization is a special case of  multi-objective optimization, in which the constraint functions are treated as objective functions which are constant over the feasible region and negative infinity elsewhere \cite{gelbart}.  
+
+\subsection{Noisy constraints} \label{sec:nconst}
+
+Problems where evaluations of the constraints are contaminated by noise are particularly challenging. If it is assumed that the noise is Gaussian then no point, even if directly observed many times, can be guaranteed to be feasible. As such, the constrained optimization problem formulated in equation \ref{eq:cop} is ill-posed: it is impossible to know with certainty that any of the constraints have been met. 
+
+It is reasonable instead to require that each constraint $c_k$ is met with high-probability \cite{gelbart}. We define the $k$th Boolean \textit{probabilistic constraint} $\mathcal{C}_k$ such that
+%
+\begin{equation}
+\mathcal{C}_k(\x) \quad \iff \quad \mathbb{P}(c_{k}(\x)\geq 0) \geq 1 - \delta_k
+\end{equation}
+%
+for some confidence level $\delta_k$. The condition that each of the $K$ probabilistic constraints $\mathcal{C}_k$ are met is denoted $\mathcal{C}$ such that: 
+%
+\begin{equation}
+\mathcal{C}(\x) \quad \iff \quad \forall k, \, \mathcal{C}_k(\x)
+\end{equation}
+%
+Now, the noisy constrained optimization problem is:
+%
+\begin{equation} \label{eq:ncop}
+\x^\star = \argmin_{\x\in\mathcal{X}} f(\x)\quad
+\mathrm{s.t.}\quad \mathcal{C}(\x)
+\end{equation}
+%
+Notice that equation \ref{eq:cop} may be recovered by requiring certainty of satisfying the constraints, that is by setting $\delta_k = 0$ for all $k$.
+
+\section{Constrained Bayesian optimization}
+
+Bayesian optimization is a promising strategy for constrained optimization problems. For example, the dissertation of Griffiths \citep{griffiths} uses constrained Bayesian optimization to optimize the molecular properties of drug candidates, using constraints to avoid invalid molecular structures.
+
+The plan is to model each of the constraints $c_k$ by GP emulators - which are sequentially updated as data is observed, just as we have done with the objective function. For tractability, the emulators are assumed to be conditionally independent given the input $\x$. Now the only alteration that needs to be made is to in some way incorporate the constraints into the acquisition function. We will discuss two ways of doing this.
+
+\subsection{Expected improvement with constraints}
+
+Expected improvement, introduced in section \ref{sec:ei}, may be extended to consider the equation \ref{eq:cop} where the constraints are coupled. This was first proposed by \citet{schonlau1998global} and has been revisited more recently \cite{snoek2013bayesian} \cite{gardner2014bayesian} - in particular by \citet{gelbart} who extends it to the equation \ref{eq:ncop}. 
+
+The main idea is to assign zero improvement to all infeasible points and to adjust the incumbent value $\nu$ to either be the best point observed to be feasible so far or the minimum of the posterior mean such that $\mathcal{C}(\nu)$ is true. 
+
+Proceeding similarly to the unconstrained case, the constrained improvement function is the random variable
+\begin{equation}
+\mathrm{I}_C(\x) \equiv \mathrm{max}\{0, \nu - f(\x)\} \, \Delta(\x)
+\end{equation}
+%
+where $\Delta(\x) \in \{0, 1\}$ is the constraint indicator function - taking value 1 if each of the constraints are met and 0 otherwise. Taking the expectation as before gives the \textit{constrained expected improvement} (EIC) acquisition function, which we are able to factor due to the assumed conditional independence given $\x$ of the emulators:
+%
+\begin{align}
+\nonumber \alpha_{\mathrm{EIC}}(\x) &\equiv \mathbb{E}[ \mathrm{max}\{0, \nu - f(\x)\} \, \Delta(\x) \, \vert \, \x ] \\
+\nonumber                 &= \mathbb{E}[\mathrm{max}\{0, \nu - f(\x)\} \, \vert \, \x] \, \mathbb{E}[\Delta(\x) \, \vert \, \x] \\ 
+                          &= \alpha_{\mathrm{EI}}(\x)\prod_{k=1}^{K} \mathbb{P}(c_{k}(\x) \geq 0)
+\end{align}
+%
+Notice that this is easily interpretable as a product of the unconstrained expected improvement function and the probability of satisfying each of the constraints. Applying the closed form from equation \ref{eq:ei} and noting that $\mathbb{P}(c_{k}(\x) \geq 0)$ is a Gaussian CDF we have
+%
+\begin{equation}
+\alpha_{\mathrm{EIC}}(\x) = \sigma(\x)[z(\x)\Phi(z(\x)) + \phi(z(\x))] \prod_{k=1}^{K} \Phi\left( \frac{\mu_k(\x)}{\sigma_k(\x)} \right)
+\end{equation}
+%
+where $z(\x) = {(\nu - \mu(\x))}/{\sigma(\x)}$ as before and the predictive mean and standard deviation of constraint $k$ are given by $\mu_k(\x)$ and $\sigma_k(\x)$. Due to this analytic form, EIC is easy to implement.
+
+\citet{gelbart} points out that this formulation is inconsistent when no feasible point has been observed (that is there does not exist a point $\x$ such that $\mathcal{C}(\x)$ holds) and proposes that in this case the algorithm should focus all its attention on locating a such a point:
+\begin{equation}
+\alpha_{\mathrm{EIC}}(\x) = 
+\begin{cases} 
+\, \alpha_{\mathrm{EI}}(\x)\prod_{k=1}^{K} \mathbb{P}(c_{k}(\x) \geq 0), &\mbox{if } \exists \x \, \mathrm{s.t.} \, \mathcal{C}(\x) \\ 
+\, \prod_{k=1}^{K} \mathbb{P}(c_{k}(\x) \geq 0), & \mbox{otherwise } 
+\end{cases}
+\end{equation}
+
+
+
+\subsection{Integrated expected conditional improvement}
+
+The EIC acquisition function is structured to avoid sampling infeasible points, but it may be beneficial to sample such points in order to provide information in the long run. This drawback is a symptom of the wider myopia of expected improvement. To remedy this \citet{gramacy2011optimization} propose using a so-called \textit{integrated expected conditional improvement} (IECI) acquisition function. IECI is also improvement-based like EI, but is designed to have additional look-ahead to help it make better long-term decisions. 
+
+In particular, rather than being based on the improvement function, IECI is based on the conditional improvement function $\mathrm{I}(\cdot\mid\cdot)$. It is a measure of the improvement at a reference point $\x'$ after a candidate point $\x$ has been chosen to be sampled, but not yet evaluated:
+%
+\begin{equation} \label{eq:conditionalimprovement}
+\mathrm{I}(\x' \mid \x) \equiv \max \{0, \nu - f(\x' \mid \x)\}
+\end{equation}
+
+GP models are not dynamic, and so the distribution of $f(\x' \mid \x)$ remains $f(\x')$ prior to the observation at $\x$. However, it is in fact possible to deduce what the predictive variance of the updated model will be once that observation has happened. Recall that the predictive variance equation \ref{eq:npredvar} is not dependent on the actual values observed $\y$, only the training data locations $\x_{1:n}$. Following this observation, \citet{gramacy2011optimization} \textit{define} the distribution of $f(\x' \mid \x)$ to be Gaussian with predictive mean $\mu(\x')$ conditioned on the data actually observed and predictive variance $\sigma^2_\x(\x')$ conditioned on the data actually observed together with the unobserved $\x$. The closer $\x'$ is to $\x$ the greater the reduction in predictive variance, assuming that the kernel function is concave. Therefore, taking the expectation of equation \ref{eq:conditionalimprovement} simply amounts to replacing $\sigma^2(\x')$ in equation \ref{eq:ei} by $\sigma^2_\x(\x')$
+%
+\begin{equation}
+\mathbb{E}[\mathrm{I}(\x' \mid \x)] = \sigma_\x(\x')[z(\x')\Phi(z(\x')) + \phi(z(\x'))] \label{eq:expectedci}
+\end{equation}
+%
+where $z(\x') = {(\nu - \mu(\x'))}/{\sigma_\x(\x')}$. 
+
+Taking a step back for a second, remember that we are looking for an acquisition function which can be maximized as a function of $\x$ only. For this reason we first integrate over the reference point $\x' \in \D$, with arbitrary well-behaved distribution $g(\x')$. Secondly, notice that we prefer candidate points which \textit{minimize} expected conditional improvement, for example by reducing $\sigma_\x(\x')$ in equation \ref{eq:expectedci}. As a result we negate the integral to give a general IECI acquisition function, defined to be:
+%
+\begin{equation}
+\alpha_{\mathrm{IECI}}(\x) \equiv - \int_{\x' \in \D} \mathbb{E}[\mathrm{I}(\x' \mid \x)] g(\x') \; d\x' \label{eq:ieci}
+\end{equation}
+
+Rather than think of minimizing the expected conditional improvement, it is perhaps more intuitive to think of maximizing the expected reduction in improvement. Speaking heuristically, the amount of improvement in a system is finite and should decrease with each additional observation, reaching zero when a minimizer $\x^\star$ is found. Choosing candidate points $\x$ which maximize this reduction should lead to an efficient optimization policy. 
+
+These two approaches are analogous. To make the connection clear, we use the fact that acquisition functions can scaled additively without changing the maxima - and therefore leading to the same decision making in practise. Since $\mathbb{E}[I(\x')] g(\x')$ is entirely independent of $\x$ we may rescale equation \ref{eq:ieci} to give the equivalent integrated expected reduction in improvement (IERI) acquisition function:
+%
+\begin{align}
+\nonumber \alpha_{\mathrm{IERI}}(\x) &\equiv 
+\int_{\x' \in \D} \mathbb{E}[I(\x')] g(\x') \; d\x' - \int_{\x' \in \D} \mathbb{E}[\mathrm{I}(\x' \mid \x)] g(\x') \; d\x' \\
+&= \int_{\x' \in \D} \left( \mathbb{E}[I(\x')] - \mathbb{E}[\mathrm{I}(\x' \mid \x)] \right) g(\x') \; d\x' \label{ieri}
+\end{align}
+
+This is all well and good, but we still have the problems of dealing with the distribution $g(\x')$ and incorporating the constraints. However, the IECI acquisition function is built to be able to deal naturally with both these problems at once. This is accomplished by using the density $g(\x')$ to favour reductions in expected improvement in regions likely to be feasible. In particular, taking $g(\x')$ to be the probability of satisfying each of the $K$ black-box constraints $c_k$ gives the constrained IECI acquisition function:
+%
+\begin{equation}
+\alpha_{\mathrm{IECI}}(\x) \equiv - \int_{\x' \in \D} \mathbb{E}[\mathrm{I}(\x' \mid \x)] \prod_{k=1}^{K} \mathbb{P}(c_{k}(\x') \geq 0) \; d\x' \label{cieci}
+\end{equation}
+%
+This is the form of IECI that we will use in this project. One drawback is that this integral is not tractable in general and is instead approximated \cite{gramacy2011optimization}.

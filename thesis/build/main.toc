@@ -1,0 +1,85 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Declaration of Authorship}{iii}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Abstract}{v}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acknowledgements}{vii}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Contents}{ix}{chapter*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Background}{1}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Problem definition}{1}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Pragmatic aims}{3}{section.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Sample designs}{3}{section.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Models \& trade-offs}{4}{section.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Bayesian optimization}{7}{section.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Bandits}{9}{section.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Gaussian processes}{11}{chapter.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Multivariate Gaussian distribution}{11}{section.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Gaussian process definition}{12}{section.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Kernel functions}{13}{section.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Squared exponential}{13}{subsection.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Mat\IeC {\'e}rn}{14}{subsection.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}Automatic relevance determination}{16}{subsection.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Sampling from a Gaussian process}{16}{section.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Bayesian linear regression}{17}{section.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Gaussian process regression}{19}{section.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Learning the hyper-parameters}{21}{section.80}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Acquisition functions}{25}{chapter.83}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Optimal policies}{25}{section.84}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Acquisition functions}{26}{section.86}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Probability of improvement}{27}{subsection.91}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Expected improvement}{27}{subsection.93}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}Lower confidence bound}{28}{subsection.98}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Maximizing the acquisition function}{29}{section.100}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Constrained optimization}{31}{chapter.101}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Introduction}{31}{section.102}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Noisy constraints}{32}{subsection.104}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Constrained Bayesian optimization}{33}{section.108}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Expected improvement with constraints}{33}{subsection.109}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Integrated expected conditional improvement}{35}{subsection.114}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Experiments}{37}{chapter.120}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Unconstrained}{37}{section.122}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Constrained}{40}{section.125}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Discussion}{44}{section.131}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Conclusion}{45}{chapter.132}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{47}{appendix*.133}

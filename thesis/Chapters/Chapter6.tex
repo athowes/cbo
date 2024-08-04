@@ -1,0 +1,18 @@
+% Chapter 6
+
+\chapter{Conclusion} % Main chapter title
+
+\label{Chapter6} % For referencing the chapter elsewhere, use \ref{Chapter4} 
+
+%----------------------------------------------------------------------------------------
+
+In Chapter \ref{Chapter1} we began by introducing four properties of the objective function and the challenges they pose to optimization. Via discussion of three sample design strategies we presented some of the prominent considerations, principles and trade-offs in such a problem. This motivated a sequential, model-based approach - known as Bayesian optimization. 
+
+Chapter \ref{Chapter2} explores Gaussian process emulators to the objective function, which are the most commonly used statistical model for Bayesian optimization. We discussed some of the design challenges, such as the choice of kernel function and handling of hyper-parameters, in the practical implementation of GPs. Chapter \ref{Chapter3} explains the role of the acquisition function and gives three examples. Our first experiment, in section \ref{experiment1}, demonstrated the application of this theory, resulting in a substantial performance improvement on LHS.
+
+We have also considered the extension of Bayesian optimization to deal with black-box, inequality constraints. Chapter \ref{Chapter4} introduces two constrained acquisition functions, expected improvement with constraints and integrated expected conditional improvement, which are tested against each other in our second experiment, section \ref{experiment2}. The results of this experiment seem to suggest that for simple feasible regions EIC may be preferable to IECI - quite how plausible such simplistic feasible regions are in practice is questionable. 
+
+The discussion of constrained Bayesian optimization was by no means exhaustive: two suggestions for further study are the work of \citet{gramacy2016modeling} on augmented Lagrangian approaches and the work of \citet{hernandez2015predictive} on so-called predictive entropy search with constraints.
+
+Needless to say, there is still a great deal of work to be done on Bayesian optimization. A look at last years NIPS workshop \cite{nips} gives an idea of the direction moving forward: scaling to larger data-sets, moving beyond GPs and making the overall Bayesian optimization toolbox more comprehensive and easy to use. A great deal of this work is directly driven by problems in science and engineering and as such there is a lot of room for collaboration. A number of companies have also been founded aiming to use provide Bayesian optimization as a service \cite{osborne2018}. This all goes to say that it is a dynamic and exciting research area to be a part of. 
+

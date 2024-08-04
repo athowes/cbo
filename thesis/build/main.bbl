@@ -1,0 +1,1916 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{rockafellar1993lagrange}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RRT}{%
+         family={Rockafellar},
+         familyi={R\bibinitperiod},
+         given={R\bibnamedelima Tyrrell},
+         giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SIAM}%
+    }
+    \strng{namehash}{RRT1}
+    \strng{fullhash}{RRT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{183\bibrangedash 238}
+    \field{title}{Lagrange multipliers and optimality}
+    \field{volume}{35}
+    \field{journaltitle}{SIAM review}
+    \field{year}{1993}
+  \endentry
+
+  \entry{vizier}{proceedings}{}
+    \name{editor}{6}{}{%
+      {{hash=GD}{%
+         family={Golovin},
+         familyi={G\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Solnik},
+         familyi={S\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Moitra},
+         familyi={M\bibinitperiod},
+         given={Subhodeep},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Kochanski},
+         familyi={K\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=KJE}{%
+         family={Karro},
+         familyi={K\bibinitperiod},
+         given={John\bibnamedelima Elliot},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Sculley},
+         familyi={S\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GDSBMS+1}
+    \strng{fullhash}{GDSBMSKGKJESD1}
+    \field{labelnamesource}{editor}
+    \field{labeltitlesource}{title}
+    \field{title}{{Google Vizier}: A Service for Black-Box Optimization}
+    \verb{url}
+    \verb http://www.kdd.org/kdd2017/papers/view/google-vizier-a-service-for-bl
+    \verb ack-box-optimization
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{snoek2012practical}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SJ}{%
+         family={Snoek},
+         familyi={S\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Larochelle},
+         familyi={L\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ARP}{%
+         family={Adams},
+         familyi={A\bibinitperiod},
+         given={R.\bibnamedelima P.},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \keyw{Statistics - Machine Learning, Computer Science - Learning}
+    \strng{namehash}{SJLHARP1}
+    \strng{fullhash}{SJLHARP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1206.2944
+    \endverb
+    \field{title}{{Practical Bayesian optimization of machine learning
+  algorithms}}
+    \field{journaltitle}{ArXiv e-prints}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ML}
+    \field{month}{06}
+    \field{year}{2012}
+  \endentry
+
+  \entry{shahriari2016taking}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SB}{%
+         family={Shahriari},
+         familyi={S\bibinitperiod},
+         given={Bobak},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Swersky},
+         familyi={S\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=WZ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ziyu},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=ARP}{%
+         family={Adams},
+         familyi={A\bibinitperiod},
+         given={Ryan\bibnamedelima P},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=DFN}{%
+         family={De\bibnamedelima Freitas},
+         familyi={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Nando},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{SBSKWZ+1}
+    \strng{fullhash}{SBSKWZARPDFN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{148\bibrangedash 175}
+    \field{title}{{Taking the human out of the loop: A review of Bayesian
+  optimization}}
+    \field{volume}{104}
+    \field{journaltitle}{Proceedings of the IEEE}
+    \field{year}{2016}
+  \endentry
+
+  \entry{horst2013handbook}{book}{}
+    \name{author}{2}{}{%
+      {{hash=HR}{%
+         family={Horst},
+         familyi={H\bibinitperiod},
+         given={Reiner},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PPM}{%
+         family={Pardalos},
+         familyi={P\bibinitperiod},
+         given={Panos\bibnamedelima M},
+         giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{HRPPM1}
+    \strng{fullhash}{HRPPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Handbook of global optimization}
+    \field{volume}{2}
+    \field{year}{2013}
+  \endentry
+
+  \entry{lizotte}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=LDJ}{%
+         family={Lizotte},
+         familyi={L\bibinitperiod},
+         given={Daniel\bibnamedelima James},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {University of Alberta}%
+    }
+    \strng{namehash}{LDJ1}
+    \strng{fullhash}{LDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{978-0-494-46365-9}
+    \field{note}{AAINR46365}
+    \field{title}{{Practical Bayesian} Optimization}
+    \list{location}{1}{%
+      {Edmonton, Alta., Canada}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2008}
+  \endentry
+
+  \entry{betro1991}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BB}{%
+         family={Betr{\`o}},
+         familyi={B\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BB1}
+    \strng{fullhash}{BB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/BF00120661
+    \endverb
+    \field{issn}{1573-2916}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 14}
+    \field{title}{Bayesian methods in global optimization}
+    \verb{url}
+    \verb https://doi.org/10.1007/BF00120661
+    \endverb
+    \field{volume}{1}
+    \field{journaltitle}{Journal of Global Optimization}
+    \field{year}{1991}
+  \endentry
+
+  \entry{brochu2010interactive}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=BE}{%
+         family={Brochu},
+         familyi={B\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BE1}
+    \strng{fullhash}{BE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Interactive Bayesian optimization: learning parameters for
+  graphics and animation}}
+    \list{institution}{1}{%
+      {PhD thesis, University of British Columbia}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2010}
+  \endentry
+
+  \entry{streltsov1999non}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SS}{%
+         family={Streltsov},
+         familyi={S\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VP}{%
+         family={Vakili},
+         familyi={V\bibinitperiod},
+         given={Pirooz},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SSVP1}
+    \strng{fullhash}{SSVP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{283\bibrangedash 298}
+    \field{title}{A non-myopic utility function for statistical global
+  optimization algorithms}
+    \field{volume}{14}
+    \field{journaltitle}{Journal of Global Optimization}
+    \field{year}{1999}
+  \endentry
+
+  \entry{bergstra2012random}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Bergstra},
+         familyi={B\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJBY1}
+    \strng{fullhash}{BJBY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{Feb}
+    \field{pages}{281\bibrangedash 305}
+    \field{title}{Random search for hyper-parameter optimization}
+    \field{volume}{13}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2012}
+  \endentry
+
+  \entry{lectures}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=GRB}{%
+         family={Gramacy},
+         familyi={G\bibinitperiod},
+         given={Robert\bibnamedelima B.},
+         giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GRB1}
+    \strng{fullhash}{GRB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{Lecture Notes}
+    \field{title}{{STAT} 6984: Response Surface Methods and Computer
+  Experiments}
+    \list{institution}{1}{%
+      {Department of Statistics, Virginia Tech}%
+    }
+  \endentry
+
+  \entry{blog}{online}{}
+    \name{author}{1}{}{%
+      {{hash=LN}{%
+         family={Lawrence},
+         familyi={L\bibinitperiod},
+         given={Neil},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LN1}
+    \strng{fullhash}{LN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{What is Machine Learning?}
+    \verb{url}
+    \verb http://inverseprobability.com/2017/07/17/what-is-machine-learning
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{kushner1964new}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KHJ}{%
+         family={Kushner},
+         familyi={K\bibinitperiod},
+         given={Harold\bibnamedelima J},
+         giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Society of Mechanical Engineers}%
+    }
+    \strng{namehash}{KHJ1}
+    \strng{fullhash}{KHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{97\bibrangedash 106}
+    \field{title}{A new method of locating the maximum point of an arbitrary
+  multipeak curve in the presence of noise}
+    \field{volume}{86}
+    \field{journaltitle}{Journal of Basic Engineering}
+    \field{year}{1964}
+  \endentry
+
+  \entry{mockus1974bayesian}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=MJ}{%
+         family={Mockus},
+         familyi={M\bibinitperiod},
+         given={Jonas},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{MJ1}
+    \strng{fullhash}{MJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the IFIP Technical Conference}
+    \field{isbn}{3-540-07165-2}
+    \field{pages}{400\bibrangedash 404}
+    \field{title}{{On Bayesian methods for seeking the extremum}}
+    \verb{url}
+    \verb http://dl.acm.org/citation.cfm?id=646296.687872
+    \endverb
+    \list{location}{1}{%
+      {London, UK, UK}%
+    }
+    \field{year}{1974}
+  \endentry
+
+  \entry{cox}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CRT}{%
+         family={Cox},
+         familyi={C\bibinitperiod},
+         given={R.\bibnamedelima T.},
+         giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CRT1}
+    \strng{fullhash}{CRT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1119/1.1990764
+    \endverb
+    \verb{eprint}
+    \verb https://doi.org/10.1119/1.1990764
+    \endverb
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 13}
+    \field{title}{Probability, Frequency and Reasonable Expectation}
+    \verb{url}
+    \verb https://doi.org/10.1119/1.1990764
+    \endverb
+    \field{volume}{14}
+    \field{journaltitle}{American Journal of Physics}
+    \field{year}{1946}
+  \endentry
+
+  \entry{bischl2017mlrmbo}{article}{}
+    \name{author}{6}{}{%
+      {{hash=BB}{%
+         family={Bischl},
+         familyi={B\bibinitperiod},
+         given={Bernd},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Richter},
+         familyi={R\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Bossek},
+         familyi={B\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Horn},
+         familyi={H\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=TJ}{%
+         family={Thomas},
+         familyi={T\bibinitperiod},
+         given={Janek},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lang},
+         familyi={L\bibinitperiod},
+         given={Michel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BBRJBJ+1}
+    \strng{fullhash}{BBRJBJHDTJLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{mlrMBO}: A modular framework for model-based optimization of
+  expensive black-box functions}
+    \field{journaltitle}{arXiv preprint arXiv:1703.03373}
+    \field{year}{2017}
+  \endentry
+
+  \entry{robbins1985some}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=RH}{%
+         family={Robbins},
+         familyi={R\bibinitperiod},
+         given={Herbert},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{RH1}
+    \strng{fullhash}{RH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Herbert Robbins Selected Papers}
+    \field{pages}{169\bibrangedash 177}
+    \field{title}{Some aspects of the sequential design of experiments}
+    \field{year}{1985}
+  \endentry
+
+  \entry{ryzhov2012knowledge}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RIO}{%
+         family={Ryzhov},
+         familyi={R\bibinitperiod},
+         given={Ilya\bibnamedelima O.},
+         giveni={I\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+      {{hash=PWB}{%
+         family={Powell},
+         familyi={P\bibinitperiod},
+         given={Warren\bibnamedelima B.},
+         giveni={W\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=FPI}{%
+         family={Frazier},
+         familyi={F\bibinitperiod},
+         given={Peter\bibnamedelima I.},
+         giveni={P\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RIOPWBFPI1}
+    \strng{fullhash}{RIOPWBFPI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1287/opre.1110.0999
+    \endverb
+    \field{number}{1}
+    \field{pages}{180\bibrangedash 195}
+    \field{title}{The Knowledge Gradient Algorithm for a General Class of
+  Online Learning Problems}
+    \verb{url}
+    \verb https://doi.org/10.1287/opre.1110.0999
+    \endverb
+    \field{volume}{60}
+    \field{journaltitle}{Operations Research}
+    \field{year}{2012}
+  \endentry
+
+  \entry{nyikosa2015adaptive}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=NFM}{%
+         family={Nyikosa},
+         familyi={N\bibinitperiod},
+         given={Favour\bibnamedelima M},
+         giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=OMA}{%
+         family={Osborne},
+         familyi={O\bibinitperiod},
+         given={Michael\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RSJ}{%
+         family={Roberts},
+         familyi={R\bibinitperiod},
+         given={Stephen\bibnamedelima J},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NFMOMARSJ1}
+    \strng{fullhash}{NFMOMARSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Workshop on {Bayesian} Optimization at NIPS}
+    \field{title}{{Adaptive Bayesian optimisation for online portfolio
+  selection}}
+    \field{volume}{2015}
+    \field{year}{2015}
+  \endentry
+
+  \entry{gelbart}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=GMA}{%
+         family={Gelbart},
+         familyi={G\bibinitperiod},
+         given={Michael\bibnamedelima Adam},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GMA1}
+    \strng{fullhash}{GMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Constrained Bayesian optimization and applications}}
+    \list{institution}{2}{%
+      {Harvard University, Graduate School of Arts}%
+      {Sciences}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2015}
+  \endentry
+
+  \entry{sm3}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=EJ}{%
+         family={Einbeck},
+         familyi={E\bibinitperiod},
+         given={Jochen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EJ1}
+    \strng{fullhash}{EJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{Lecture Notes}
+    \field{title}{Statistical Methods}
+    \list{institution}{1}{%
+      {Department of Statistics, Durham University}%
+    }
+  \endentry
+
+  \entry{krzanowski}{book}{}
+    \name{editor}{1}{}{%
+      {{hash=KWJ}{%
+         family={Krzanowski},
+         familyi={K\bibinitperiod},
+         given={W.\bibnamedelima J.},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press, Inc.}%
+    }
+    \strng{namehash}{KWJ1}
+    \strng{fullhash}{KWJ1}
+    \field{labelnamesource}{editor}
+    \field{labeltitlesource}{title}
+    \field{isbn}{0-198-52211-8}
+    \field{title}{{Principles of Multivariate Analysis: A User's Perspective}}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{1988}
+  \endentry
+
+  \entry{rasmussen}{book}{}
+    \name{author}{2}{}{%
+      {{hash=RCE}{%
+         family={Rasmussen},
+         familyi={R\bibinitperiod},
+         given={Carl\bibnamedelima Edward},
+         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=WCKI}{%
+         family={Williams},
+         familyi={W\bibinitperiod},
+         given={Christopher K.\bibnamedelima I.},
+         giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim
+  I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The MIT Press}%
+    }
+    \strng{namehash}{RCEWCKI1}
+    \strng{fullhash}{RCEWCKI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{026218253X}
+    \field{title}{{Gaussian Processes for Machine Learning (Adaptive
+  Computation and Machine Learning)}}
+    \field{year}{2005}
+  \endentry
+
+  \entry{snelson2008flexible}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SEL}{%
+         family={Snelson},
+         familyi={S\bibinitperiod},
+         given={Edward\bibnamedelima Lloyd},
+         giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {University of London, University College London (United Kingdom)}%
+    }
+    \strng{namehash}{SEL1}
+    \strng{fullhash}{SEL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Flexible and efficient Gaussian process models for machine
+  learning}}
+    \field{year}{2008}
+  \endentry
+
+  \entry{duvenaud2014automatic}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=DD}{%
+         family={Duvenaud},
+         familyi={D\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DD1}
+    \strng{fullhash}{DD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Automatic model construction with Gaussian processes}}
+    \list{institution}{1}{%
+      {University of Cambridge}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2014}
+  \endentry
+
+  \entry{stein2012interpolation}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SML}{%
+         family={Stein},
+         familyi={S\bibinitperiod},
+         given={Michael\bibnamedelima L},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{SML1}
+    \strng{fullhash}{SML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Interpolation of spatial data: some theory for kriging}
+    \field{year}{2012}
+  \endentry
+
+  \entry{matern2013spatial}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MB}{%
+         family={Mat{\'e}rn},
+         familyi={M\bibinitperiod},
+         given={Bertil},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{MB1}
+    \strng{fullhash}{MB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Spatial variation}
+    \field{volume}{36}
+    \field{year}{2013}
+  \endentry
+
+  \entry{santner2013design}{book}{}
+    \name{author}{3}{}{%
+      {{hash=STJ}{%
+         family={Santner},
+         familyi={S\bibinitperiod},
+         given={Thomas\bibnamedelima J},
+         giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=WBJ}{%
+         family={Williams},
+         familyi={W\bibinitperiod},
+         given={Brian\bibnamedelima J},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=NWI}{%
+         family={Notz},
+         familyi={N\bibinitperiod},
+         given={William\bibnamedelima I},
+         giveni={W\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{STJWBJNWI1}
+    \strng{fullhash}{STJWBJNWI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The design and analysis of computer experiments}
+    \field{year}{2013}
+  \endentry
+
+  \entry{neal1996bayesian}{article}{}
+    \name{author}{1}{}{%
+      {{hash=NRM}{%
+         family={Neal},
+         familyi={N\bibinitperiod},
+         given={Radford\bibnamedelima M},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag New York, Inc.}%
+    }
+    \strng{namehash}{NRM1}
+    \strng{fullhash}{NRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Bayesian Learning for Neural Networks}}
+    \field{year}{1996}
+  \endentry
+
+  \entry{christopher2006pattern}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CMB}{%
+         family={Christopher},
+         familyi={C\bibinitperiod},
+         given={M\bibnamedelima Bishop},
+         giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag New York}%
+    }
+    \strng{namehash}{CMB1}
+    \strng{fullhash}{CMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Pattern Recognition and Machine Learning}}
+    \field{year}{2006}
+  \endentry
+
+  \entry{vafa2016training}{article}{}
+    \name{author}{1}{}{%
+      {{hash=VK}{%
+         family={Vafa},
+         familyi={V\bibinitperiod},
+         given={Keyon},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VK1}
+    \strng{fullhash}{VK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Training and Inference for Deep Gaussian Processes}}
+    \list{institution}{1}{%
+      {Harvard College}%
+    }
+    \field{year}{2016}
+  \endentry
+
+  \entry{orbanz2011bayesian}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=OP}{%
+         family={Orbanz},
+         familyi={O\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TYW}{%
+         family={Teh},
+         familyi={T\bibinitperiod},
+         given={Yee\bibnamedelima Whye},
+         giveni={Y\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{OPTYW1}
+    \strng{fullhash}{OPTYW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Encyclopedia of Machine Learning}
+    \field{pages}{81\bibrangedash 89}
+    \field{title}{Bayesian nonparametric models}
+    \field{year}{2011}
+  \endentry
+
+  \entry{shah2014student}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SA}{%
+         family={Shah},
+         familyi={S\bibinitperiod},
+         given={Amar},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WA}{%
+         family={Wilson},
+         familyi={W\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GZ}{%
+         family={Ghahramani},
+         familyi={G\bibinitperiod},
+         given={Zoubin},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SAWAGZ1}
+    \strng{fullhash}{SAWAGZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Artificial Intelligence and Statistics}
+    \field{pages}{877\bibrangedash 885}
+    \field{title}{{Student-t processes as alternatives to Gaussian processes}}
+    \field{year}{2014}
+  \endentry
+
+  \entry{quinonero2005unifying}{article}{}
+    \name{author}{2}{}{%
+      {{hash=QCJ}{%
+         family={Qui{\~n}onero-Candela},
+         familyi={Q\bibinitperiod-C\bibinitperiod},
+         given={Joaquin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RCE}{%
+         family={Rasmussen},
+         familyi={R\bibinitperiod},
+         given={Carl\bibnamedelima Edward},
+         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QCJRCE1}
+    \strng{fullhash}{QCJRCE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{Dec}
+    \field{pages}{1939\bibrangedash 1959}
+    \field{title}{{A unifying view of sparse approximate Gaussian process
+  regression}}
+    \field{volume}{6}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2005}
+  \endentry
+
+  \entry{snelson2006sparse}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SE}{%
+         family={Snelson},
+         familyi={S\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=GZ}{%
+         family={Ghahramani},
+         familyi={G\bibinitperiod},
+         given={Zoubin},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SEGZ1}
+    \strng{fullhash}{SEGZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Advances in neural information processing systems}
+    \field{pages}{1257\bibrangedash 1264}
+    \field{title}{{Sparse Gaussian processes using pseudo-inputs}}
+    \field{year}{2006}
+  \endentry
+
+  \entry{mackay1992bayesian}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MDJ}{%
+         family={MacKay},
+         familyi={M\bibinitperiod},
+         given={David\bibnamedelima JC},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{MDJ1}
+    \strng{fullhash}{MDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{415\bibrangedash 447}
+    \field{title}{Bayesian interpolation}
+    \field{volume}{4}
+    \field{journaltitle}{Neural computation}
+    \field{year}{1992}
+  \endentry
+
+  \entry{byrd1995limited}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BRH}{%
+         family={Byrd},
+         familyi={B\bibinitperiod},
+         given={Richard\bibnamedelima H},
+         giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Lu},
+         familyi={L\bibinitperiod},
+         given={Peihuang},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=NJ}{%
+         family={Nocedal},
+         familyi={N\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZC}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Ciyou},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SIAM}%
+    }
+    \strng{namehash}{BRHLPNJ+1}
+    \strng{fullhash}{BRHLPNJZC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{5}
+    \field{pages}{1190\bibrangedash 1208}
+    \field{title}{A limited memory algorithm for bound constrained
+  optimization}
+    \field{volume}{16}
+    \field{journaltitle}{SIAM Journal on Scientific Computing}
+    \field{year}{1995}
+  \endentry
+
+  \entry{roustant2012dicekriging}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RO}{%
+         family={Roustant},
+         familyi={R\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Ginsbourger},
+         familyi={G\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DY}{%
+         family={Deville},
+         familyi={D\bibinitperiod},
+         given={Yves},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ROGDDY1}
+    \strng{fullhash}{ROGDDY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{DiceKriging, DiceOptim: Two R packages for the analysis of
+  computer experiments by kriging-based metamodeling and optimization}}
+    \field{year}{2012}
+  \endentry
+
+  \entry{macdonald2013gpfit}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MB}{%
+         family={MacDonald},
+         familyi={M\bibinitperiod},
+         given={Blake},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Ranjan},
+         familyi={R\bibinitperiod},
+         given={Pritam},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Chipman},
+         familyi={C\bibinitperiod},
+         given={Hugh},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MBRPCH1}
+    \strng{fullhash}{MBRPCH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{GPfit: an R package for Gaussian process model fitting using
+  a new optimization algorithm}}
+    \field{journaltitle}{arXiv preprint arXiv:1305.0759}
+    \field{year}{2013}
+  \endentry
+
+  \entry{gramacy2016lagp}{article}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=GRB}{%
+         family={Gramacy},
+         familyi={G\bibinitperiod},
+         given={Robert\bibnamedelima B},
+         giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Foundation for Open Access Statistics}%
+    }
+    \strng{namehash}{GRB+1}
+    \strng{fullhash}{GRB+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 46}
+    \field{title}{{laGP}: large-scale spatial modeling via local approximate
+  Gaussian processes in {R}}
+    \field{volume}{72}
+    \field{journaltitle}{Journal of Statistical Software}
+    \field{year}{2016}
+  \endentry
+
+  \entry{sugden}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LG}{%
+         family={Loomes},
+         familyi={L\bibinitperiod},
+         given={Graham},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Sugden},
+         familyi={S\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {[Royal Economic Society, Wiley]}%
+    }
+    \strng{namehash}{LGSR1}
+    \strng{fullhash}{LGSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{issn}{00130133, 14680297}
+    \field{number}{368}
+    \field{pages}{805\bibrangedash 824}
+    \field{title}{Regret Theory: An Alternative Theory of Rational Choice Under
+  Uncertainty}
+    \verb{url}
+    \verb http://www.jstor.org/stable/2232669
+    \endverb
+    \field{volume}{92}
+    \field{journaltitle}{The Economic Journal}
+    \field{year}{1982}
+  \endentry
+
+  \entry{srinivas2009gaussian}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SN}{%
+         family={{Srinivas}},
+         familyi={S\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={{Krause}},
+         familyi={K\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KSM}{%
+         family={{Kakade}},
+         familyi={K\bibinitperiod},
+         given={S.\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={{Seeger}},
+         familyi={S\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{Computer Science - Learning}
+    \strng{namehash}{SNKAKSM+1}
+    \strng{fullhash}{SNKAKSMSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 0912.3995
+    \endverb
+    \field{title}{{Gaussian Process optimization in the bandit Setting: no
+  regret and experimental design}}
+    \field{journaltitle}{ArXiv e-prints}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{month}{12}
+    \field{year}{2009}
+  \endentry
+
+  \entry{lam2016bayesian}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=LR}{%
+         family={Lam},
+         familyi={L\bibinitperiod},
+         given={Remi},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WK}{%
+         family={Willcox},
+         familyi={W\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=WDH}{%
+         family={Wolpert},
+         familyi={W\bibinitperiod},
+         given={David\bibnamedelima H},
+         giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRWKWDH1}
+    \strng{fullhash}{LRWKWDH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Advances in Neural Information Processing Systems}
+    \field{pages}{883\bibrangedash 891}
+    \field{title}{Bayesian optimization with a finite budget: An approximate
+  dynamic programming approach}
+    \field{year}{2016}
+  \endentry
+
+  \entry{gonzalez2015glasses}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GJ}{%
+         family={{Gonz{\'a}lez}},
+         familyi={G\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=OM}{%
+         family={{Osborne}},
+         familyi={O\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LND}{%
+         family={{Lawrence}},
+         familyi={L\bibinitperiod},
+         given={N.\bibnamedelima D.},
+         giveni={N\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \keyw{Statistics - Machine Learning}
+    \strng{namehash}{GJOMLND1}
+    \strng{fullhash}{GJOMLND1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1510.06299
+    \endverb
+    \field{title}{{GLASSES}: Relieving The Myopia Of {Bayesian} Optimisation}
+    \field{journaltitle}{ArXiv e-prints}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ML}
+    \field{month}{10}
+    \field{year}{2015}
+  \endentry
+
+  \entry{jones2001taxonomy}{article}{}
+    \name{author}{1}{}{%
+      {{hash=JDR}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={Donald\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{JDR1}
+    \strng{fullhash}{JDR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{4}
+    \field{pages}{345\bibrangedash 383}
+    \field{title}{A taxonomy of global optimization methods based on response
+  surfaces}
+    \field{volume}{21}
+    \field{journaltitle}{Journal of global optimization}
+    \field{year}{2001}
+  \endentry
+
+  \entry{schonlau1996global}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SM}{%
+         family={Schonlau},
+         familyi={S\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WWJ}{%
+         family={Welch},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima J},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={DR},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SMWWJJD1}
+    \strng{fullhash}{SMWWJJD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{183\bibrangedash 186}
+    \field{title}{Global optimization with nonparametric function fitting}
+    \field{journaltitle}{Proceedings of the ASA, section on physical and
+  engineering sciences}
+    \field{year}{1996}
+  \endentry
+
+  \entry{bull2011convergence}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BAD}{%
+         family={Bull},
+         familyi={B\bibinitperiod},
+         given={Adam\bibnamedelima D},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BAD1}
+    \strng{fullhash}{BAD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{Oct}
+    \field{pages}{2879\bibrangedash 2904}
+    \field{title}{Convergence rates of efficient global optimization
+  algorithms}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2011}
+  \endentry
+
+  \entry{jones1998efficient}{article}{}
+    \name{author}{3}{}{%
+      {{hash=JDR}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={Donald\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Schonlau},
+         familyi={S\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WWJ}{%
+         family={Welch},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima J},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{JDRSMWWJ1}
+    \strng{fullhash}{JDRSMWWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{4}
+    \field{pages}{455\bibrangedash 492}
+    \field{title}{Efficient global optimization of expensive black-box
+  functions}
+    \field{volume}{13}
+    \field{journaltitle}{Journal of Global optimization}
+    \field{year}{1998}
+  \endentry
+
+  \entry{lai1985asymptotically}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LTL}{%
+         family={Lai},
+         familyi={L\bibinitperiod},
+         given={Tze\bibnamedelima Leung},
+         giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Robbins},
+         familyi={R\bibinitperiod},
+         given={Herbert},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{LTLRH1}
+    \strng{fullhash}{LTLRH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{4\bibrangedash 22}
+    \field{title}{Asymptotically efficient adaptive allocation rules}
+    \field{volume}{6}
+    \field{journaltitle}{Advances in applied mathematics}
+    \field{year}{1985}
+  \endentry
+
+  \entry{gardner2014bayesian}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=GJR}{%
+         family={Gardner},
+         familyi={G\bibinitperiod},
+         given={Jacob\bibnamedelima R},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=KMJ}{%
+         family={Kusner},
+         familyi={K\bibinitperiod},
+         given={Matt\bibnamedelima J},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=XZE}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Zhixiang\bibnamedelima Eddie},
+         giveni={Z\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=WKQ}{%
+         family={Weinberger},
+         familyi={W\bibinitperiod},
+         given={Kilian\bibnamedelima Q},
+         giveni={K\bibinitperiod\bibinitdelim Q\bibinitperiod},
+      }}%
+      {{hash=CJP}{%
+         family={Cunningham},
+         familyi={C\bibinitperiod},
+         given={John\bibnamedelima P},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJRKMJXZE+1}
+    \strng{fullhash}{GJRKMJXZEWKQCJP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{ICML}
+    \field{pages}{937\bibrangedash 945}
+    \field{title}{Bayesian Optimization with Inequality Constraints.}
+    \field{year}{2014}
+  \endentry
+
+  \entry{letham2017constrained}{article}{}
+    \name{author}{4}{}{%
+      {{hash=LB}{%
+         family={Letham},
+         familyi={L\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KB}{%
+         family={Karrer},
+         familyi={K\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=OG}{%
+         family={Ottoni},
+         familyi={O\bibinitperiod},
+         given={Guilherme},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BE}{%
+         family={Bakshy},
+         familyi={B\bibinitperiod},
+         given={Eytan},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LBKBOG+1}
+    \strng{fullhash}{LBKBOGBE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Constrained {Bayesian} optimization with noisy experiments}
+    \field{journaltitle}{arXiv preprint arXiv:1706.07094}
+    \field{year}{2017}
+  \endentry
+
+  \entry{dt3}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=CC}{%
+         family={Caiado},
+         familyi={C\bibinitperiod},
+         given={Camila},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={Coolen},
+         familyi={C\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CCCF1}
+    \strng{fullhash}{CCCF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{Lecture Notes}
+    \field{title}{Decision Theory}
+    \list{institution}{1}{%
+      {Department of Statistics, Durham University}%
+    }
+  \endentry
+
+  \entry{griffiths}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GRR}{%
+         family={{Griffiths}},
+         familyi={G\bibinitperiod},
+         given={R.-R.},
+         giveni={R\bibinitperiod-R\bibinitperiod},
+      }}%
+      {{hash=HJM}{%
+         family={{Hern{\'a}ndez-Lobato}},
+         familyi={H\bibinitperiod},
+         given={J.\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \keyw{Statistics - Machine Learning}
+    \strng{namehash}{GRRHJM1}
+    \strng{fullhash}{GRRHJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1709.05501
+    \endverb
+    \field{title}{{Constrained Bayesian Optimization for Automatic Chemical
+  Design}}
+    \field{journaltitle}{ArXiv e-prints}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ML}
+    \field{month}{09}
+    \field{year}{2017}
+  \endentry
+
+  \entry{schonlau1998global}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SM}{%
+         family={Schonlau},
+         familyi={S\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WWJ}{%
+         family={Welch},
+         familyi={W\bibinitperiod},
+         given={William\bibnamedelima J},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=JDR}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={Donald\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{SMWWJJDR1}
+    \strng{fullhash}{SMWWJJDR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{11\bibrangedash 25}
+    \field{title}{Global versus local search in constrained optimization of
+  computer models}
+    \field{journaltitle}{Lecture Notes-Monograph Series}
+    \field{year}{1998}
+  \endentry
+
+  \entry{snoek2013bayesian}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=SJ}{%
+         family={Snoek},
+         familyi={S\bibinitperiod},
+         given={Jasper},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJ1}
+    \strng{fullhash}{SJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Bayesian optimization and semiparametric models with
+  applications to assistive technology}
+    \list{institution}{1}{%
+      {Citeseer}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2013}
+  \endentry
+
+  \entry{gramacy2011optimization}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GRB}{%
+         family={{Gramacy}},
+         familyi={G\bibinitperiod},
+         given={R.\bibnamedelima B.},
+         giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=LHKH}{%
+         family={{Lee}},
+         familyi={L\bibinitperiod},
+         given={H.\bibnamedelima K.\bibnamedelima H.},
+         giveni={H\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
+      }}%
+    }
+    \keyw{Statistics - Methodology, Statistics - Applications}
+    \strng{namehash}{GRBLHKH1}
+    \strng{fullhash}{GRBLHKH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1004.4027
+    \endverb
+    \field{title}{{Optimization Under Unknown Constraints}}
+    \field{journaltitle}{ArXiv e-prints}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ME}
+    \field{month}{04}
+    \field{year}{2010}
+  \endentry
+
+  \entry{eggensperger2013towards}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=EK}{%
+         family={Eggensperger},
+         familyi={E\bibinitperiod},
+         given={Katharina},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Feurer},
+         familyi={F\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HF}{%
+         family={Hutter},
+         familyi={H\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Bergstra},
+         familyi={B\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Snoek},
+         familyi={S\bibinitperiod},
+         given={Jasper},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Hoos},
+         familyi={H\bibinitperiod},
+         given={Holger},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LBK}{%
+         family={Leyton-Brown},
+         familyi={L\bibinitperiod-B\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EKFMHF+1}
+    \strng{fullhash}{EKFMHFBJSJHHLBK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{NIPS workshop on {Bayesian} Optimization in Theory and
+  Practice}
+    \field{title}{Towards an empirical foundation for assessing {Bayesian}
+  optimization of hyperparameters}
+    \field{volume}{10}
+    \field{year}{2013}
+  \endentry
+
+  \entry{picheny2013benchmark}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PV}{%
+         family={Picheny},
+         familyi={P\bibinitperiod},
+         given={Victor},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={Tobias},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Ginsbourger},
+         familyi={G\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{PVWTGD1}
+    \strng{fullhash}{PVWTGD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{607\bibrangedash 626}
+    \field{title}{A benchmark of kriging-based infill criteria for noisy
+  optimization}
+    \field{volume}{48}
+    \field{journaltitle}{Structural and Multidisciplinary Optimization}
+    \field{year}{2013}
+  \endentry
+
+  \entry{sfu}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://www.sfu.ca/~ssurjano/branin.html}}
+    \field{note}{Accessed: 2018-04-01}
+    \field{title}{Virtual Library of Simulation Experiments: Test Functions and
+  Datasets}
+  \endentry
+
+  \entry{wang2016practical}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=WZ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ziyu},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WZ1}
+    \strng{fullhash}{WZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Practical and theoretical advances in {Bayesian}
+  optimization}
+    \field{type}{phdthesis}
+    \field{year}{2016}
+  \endentry
+
+  \entry{gramacy2016modeling}{article}{}
+    \name{author}{7}{}{%
+      {{hash=GRB}{%
+         family={Gramacy},
+         familyi={G\bibinitperiod},
+         given={Robert\bibnamedelima B},
+         giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=GGA}{%
+         family={Gray},
+         familyi={G\bibinitperiod},
+         given={Genetha\bibnamedelima A},
+         giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=LDS}{%
+         family={Le\bibnamedelima Digabel},
+         familyi={L\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={S{\'e}bastien},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LHK}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Herbert\bibnamedelima KH},
+         giveni={H\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Ranjan},
+         familyi={R\bibinitperiod},
+         given={Pritam},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wells},
+         familyi={W\bibinitperiod},
+         given={Garth},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=WSM}{%
+         family={Wild},
+         familyi={W\bibinitperiod},
+         given={Stefan\bibnamedelima M},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis}%
+    }
+    \strng{namehash}{GRBGGALDS+1}
+    \strng{fullhash}{GRBGGALDSLHKRPWGWSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 11}
+    \field{title}{Modeling an augmented Lagrangian for blackbox constrained
+  optimization}
+    \field{volume}{58}
+    \field{journaltitle}{Technometrics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{hernandez2015predictive}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HLJM}{%
+         family={Hern{\'a}ndez-Lobato},
+         familyi={H\bibinitperiod-L\bibinitperiod},
+         given={Jos{\'e}\bibnamedelima Miguel},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=GMA}{%
+         family={Gelbart},
+         familyi={G\bibinitperiod},
+         given={Michael\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=HMW}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Matthew\bibnamedelima W},
+         giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=ARP}{%
+         family={Adams},
+         familyi={A\bibinitperiod},
+         given={Ryan\bibnamedelima P},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=GZ}{%
+         family={Ghahramani},
+         familyi={G\bibinitperiod},
+         given={Zoubin},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HLJMGMAHMW+1}
+    \strng{fullhash}{HLJMGMAHMWARPGZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Predictive entropy search for {Bayesian} optimization with
+  unknown constraints}
+    \field{year}{2015}
+  \endentry
+
+  \entry{nips}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://bayesopt.github.io/}}
+    \field{note}{Accessed: 2018-04-17}
+    \field{title}{{BayesOpt 2017}}
+  \endentry
+
+  \entry{osborne2018}{unpublished}{}
+    \name{author}{1}{}{%
+      {{hash=OM}{%
+         family={Osborne},
+         familyi={O\bibinitperiod},
+         given={Mike},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OM1}
+    \strng{fullhash}{OM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Probabilistic Numerics Workshop, Alan Turing Institute}
+    \field{title}{Bayesian optimisation is probabilistic numerics}
+    \field{year}{2018}
+  \endentry
+\enddatalist
+\endinput
