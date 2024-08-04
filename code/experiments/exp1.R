@@ -11,21 +11,14 @@ library(viridis)
 library(Rfast)
 library(cowplot)
 
-setwd("C:/Users/Adam/Desktop/bgo/code")
-
 branin <- function(x) {
-  
-  if(is.null(nrow(x))) x <- matrix(x, nrow=1)
-  
+  if (is.null(nrow(x))) x <- matrix(x, nrow = 1)
   x1 <- x[,1]
   x2 <- x[,2]
-  
-  x1bar <- 15*x1 - 5
+  x1bar <- 15 * x1 - 5
   x2bar <- 15 * x2
-  
-  term1 <- x2bar - 5.1*x1bar^2/(4*pi^2) + 5*x1bar/pi - 6
-  term2 <- (10 - 10/(8*pi)) * cos(x1bar)
-  
+  term1 <- x2bar - 5.1 * x1bar^2 / (4 * pi^2) + 5 * x1bar / pi - 6
+  term2 <- (10 - 10/(8 * pi)) * cos(x1bar)
   y <- (term1^2 + term2 - 44.81) / 51.95
   return(y)
 }
@@ -34,13 +27,13 @@ branin <- function(x) {
 
 eps <- sqrt(.Machine$double.eps)
 
-EI <- function(gpi, x, fmin, pred=predGPsep) {
+EI <- function(gpi, x, fmin, pred = predGPsep) {
   if(is.null(nrow(x))) x <- matrix(x, nrow=1)
-  p <- pred(gpi, x, lite=TRUE)
+  p <- pred(gpi, x, lite = TRUE)
   d <- fmin - p$mean
   sigma <- sqrt(p$s2)
-  dn <- d/sigma
-  ei <- d*pnorm(dn) + sigma*dnorm(dn)
+  dn <- d / sigma
+  ei <- d * pnorm(dn) + sigma * dnorm(dn)
   return(ei)
 }
 
@@ -51,15 +44,15 @@ obj.EI <- function(x, fmin, gpi) {
 EI.search <- function(X, y, gpi, multi.start = 5) {
   m <- which.min(y)
   fmin <- y[m]
-  start <- matrix(X[m,], nrow=1)
-  if(multi.start > 1) 
-    start <- rbind(start, randomLHS(multi.start-1, ncol(X)))
-  xnew <- matrix(NA, nrow=nrow(start), ncol=ncol(X)+1)
-  for(i in 1:nrow(start)) {
-    if(EI(gpi, start[i,], fmin) <= eps)
-    { out <- list(value=-Inf); next }
-    out <- optim(start[i,], obj.EI, method="L-BFGS-B", 
-                 lower=0, upper=1, gpi=gpi, fmin=fmin)
+  start <- matrix(X[m, ], nrow = 1)
+  if (multi.start > 1) 
+    start <- rbind(start, randomLHS(multi.start - 1, ncol(X)))
+  xnew <- matrix(NA, nrow = nrow(start), ncol = ncol(X) + 1)
+  for (i in 1:nrow(start)) {
+    if (EI(gpi, start[i,], fmin) <= eps)
+    { out <- list(value = -Inf); next }
+    out <- optim(start[i, ], obj.EI, method = "L-BFGS-B", 
+                 lower = 0, upper = 1, gpi = gpi, fmin = fmin)
     xnew[i,] <- c(out$par, -out$value)
   }
   solns <- data.frame(cbind(start, xnew))
@@ -70,23 +63,22 @@ EI.search <- function(X, y, gpi, multi.start = 5) {
 
 optim.EI <- function(f, ninit, stop) {
   X <- randomLHS(ninit, 2); y <- f(X)
-  gpi <- newGPsep(X, y, d=0.1, g=1e-7, dK=TRUE)
-  da <- darg(list(mle=TRUE, max=0.5), X)
-  mleGPsep(gpi, param="d", tmin=da$min, tmax=da$max, ab=da$ab)$msg
+  gpi <- newGPsep(X, y, d = 0.1, g = 1e-7, dK = TRUE)
+  da <- darg(list(mle = TRUE, max = 0.5), X)
+  mleGPsep(gpi, param = "d", tmin = da$min, tmax = da$max, ab = da$ab)$msg
   maxei <- c()
-  for(i in (ninit+1):stop) {
+  for (i in (ninit + 1):stop) {
     solns <- EI.search(X, y, gpi)
     m <- which.max(solns$val)
     maxei <- c(maxei, solns$val[m])
     xnew <- as.matrix(solns[m,3:4])
     ynew <- f(xnew)
-    updateGPsep(gpi, matrix(xnew, nrow=1), ynew)
-    mle <- mleGPsep(gpi, param="d", tmin=da$min, tmax=da$max, ab=da$ab)
+    updateGPsep(gpi, matrix(xnew, nrow = 1), ynew)
+    mle <- mleGPsep(gpi, param="d", tmin = da$min, tmax = da$max, ab = da$ab)
     X <- rbind(X, xnew); y <- c(y, ynew)
   }
   deleteGPsep(gpi)
-  
-  return(list(X=X, y=y, maxei=maxei))
+  return(list(X = X, y = y, maxei = maxei))
 }
 
 # fig5i
@@ -97,13 +89,10 @@ p.branin <- makeSingleObjectiveFunction(
   fn = function(xx) {
     x1 <- xx[1]
     x2 <- xx[2]
-    
     x1bar <- 15*x1 - 5
     x2bar <- 15 * x2
-    
     term1 <- x2bar - 5.1*x1bar^2/(4*pi^2) + 5*x1bar/pi - 6
     term2 <- (10 - 10/(8*pi)) * cos(x1bar)
-    
     y <- (term1^2 + term2 - 44.81) / 51.95
     return(y)
   },
@@ -116,7 +105,7 @@ p.branin <- makeSingleObjectiveFunction(
 sample <- optim.EI(branin, 5, 20)
 which.min(sample$y)
 round(sample$y[19], 3)
-round(sample$X[19,], 3)
+round(sample$X[19, ], 3)
 
 rownames(sample$X) <- c()
 sample.loc <- as.data.frame(sample$X) %>% mutate(id = row_number())
@@ -137,7 +126,7 @@ dev.off()
 reps <- 50
 
 prog.lhs <- matrix(NA, nrow = 20, ncol = reps)
-for(r in 1:reps) {
+for (r in 1:reps) {
   lhs.des <- generateDesign(par.set = getParamSet(p.branin), fun = lhs::randomLHS, n = 20L)
   lhs.des$y <- apply(lhs.des, 1, p.branin)
   df <- as.data.frame(lhs.des)
@@ -150,7 +139,7 @@ avg.prog.lhs <- as.data.frame(avg.prog.lhs) %>% mutate(id = row_number(), variab
 names(avg.prog.lhs) <- c("avg", "var", "id", "variable")
 
 prog.ei <- matrix(NA, nrow = 20, ncol = reps)
-for(r in 1:reps) {
+for (r in 1:reps) {
   os <- optim.EI(branin, 5, 20)
   df <- cbind(os$X, y = os$y)
   rownames(df) <- c()

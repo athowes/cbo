@@ -12,33 +12,23 @@ library(ggpolypath)
 library(Rfast)
 library(cowplot)
 
-setwd("C:/Users/Adam/Desktop/bgo/code")
-
 branin <- function(x) {
-  
-  if(is.null(nrow(x))) x <- matrix(x, nrow=1)
-  
+  if (is.null(nrow(x))) x <- matrix(x, nrow = 1)
   x1 <- x[,1]
   x2 <- x[,2]
-  
-  x1bar <- 15*x1 - 5
+  x1bar <- 15 * x1 - 5
   x2bar <- 15 * x2
-  
-  term1 <- x2bar - 5.1*x1bar^2/(4*pi^2) + 5*x1bar/pi - 6
-  term2 <- (10 - 10/(8*pi)) * cos(x1bar)
-  
+  term1 <- x2bar - 5.1 * x1bar^2 / (4 * pi^2) + 5 * x1bar / pi - 6
+  term2 <- (10 - 10/(8 * pi)) * cos(x1bar)
   y <- (term1^2 + term2 - 44.81) / 51.95
   return(y)
 }
 
 disk <- function(x) {
-  
-  if(is.null(nrow(x))) x <- matrix(x, nrow=1)
-  
+  if (is.null(nrow(x))) x <- matrix(x, nrow=1)
   x1 <- x[,1]
   x2 <- x[,2]
-  
-  y <- 2/9 - (x1 - 0.5)^2 - (x2 - 0.5)^2
+  y <- 2 / 9 - (x1 - 0.5)^2 - (x2 - 0.5)^2
   return(y)
 }
 
@@ -46,13 +36,10 @@ p.branin <- makeSingleObjectiveFunction(
   fn = function(xx) {
     x1 <- xx[1]
     x2 <- xx[2]
-    
-    x1bar <- 15*x1 - 5
+    x1bar <- 15 * x1 - 5
     x2bar <- 15 * x2
-    
-    term1 <- x2bar - 5.1*x1bar^2/(4*pi^2) + 5*x1bar/pi - 6
-    term2 <- (10 - 10/(8*pi)) * cos(x1bar)
-    
+    term1 <- x2bar - 5.1 * x1bar^2 / (4 * pi^2) + 5 * x1bar / pi - 6
+    term2 <- (10 - 10/(8 * pi)) * cos(x1bar)
     y <- (term1^2 + term2 - 44.81) / 51.95
     return(y)
   },
@@ -66,7 +53,6 @@ p.disk <- makeSingleObjectiveFunction(
   fn = function(xx) {
     x1 <- xx[1]
     x2 <- xx[2]
-    
     y <- 2/9 - (x1 - 0.5)^2 - (x2 - 0.5)^2
     return(y)
   },
@@ -82,24 +68,22 @@ eps <- sqrt(.Machine$double.eps)
 
 EIC <- function(gpi, gpc, x, fmin, pred=predGPsep) {
   # Gives the unconstrained expected improvement statistic
-  if(is.null(nrow(x))) x <- matrix(x, nrow=1)
-  p <- pred(gpi, x, lite=TRUE)
+  if (is.null(nrow(x))) x <- matrix(x, nrow = 1)
+  p <- pred(gpi, x, lite = TRUE)
   d <- fmin - p$mean
   sigma <- sqrt(p$s2)
   dn <- d/sigma
   ei <- d*pnorm(dn) + sigma*dnorm(dn)
-  
   # Now calculate the probability of satisfying the constraints
-  pc <- pred(gpc, x, lite=TRUE)
+  pc <- pred(gpc, x, lite = TRUE)
   sigmac <- sqrt(pc$s2)
   pc <- pnorm(pc$mean/sigmac)
-  
   EIC <- ei*pc
   return(EIC)
 }
 
 obj.EIC <- function(x, fmin, gpi, gpc) {
-  - EIC(gpi, gpc, x, fmin)
+  -EIC(gpi, gpc, x, fmin)
 }
 
 EIC.search <- function(X, y, gpi, gpc, multi.start = 5) {
@@ -272,8 +256,8 @@ da.plot <- darg(list(mle=TRUE, max=0.5), X)
 mleGPsep(gpi.plot, param="d", tmin=da.plot$min, tmax=da.plot$max, ab=da.plot$ab)$msg
 
 obj.mean <- function(x, gpi.plot) {
-  if(is.null(nrow(x))) x <- matrix(x, nrow=1)
-  predGPsep(gpi.plot, x, lite=TRUE)$mean
+  if (is.null(nrow(x))) x <- matrix(x, nrow = 1)
+  predGPsep(gpi.plot, x, lite = TRUE)$mean
 }
 
 obj.mean.smoof <- makeSingleObjectiveFunction(
@@ -305,7 +289,7 @@ dac.plot <- darg(list(mle=TRUE, max=0.5), X)
 mleGPsep(gpc.plot, param="d", tmin=dac.plot$min, tmax=dac.plot$max, ab=dac.plot$ab)$msg
 
 con.mean <- function(x, gpc.plot) {
-  if(is.null(nrow(x))) x <- matrix(x, nrow=1)
+  if (is.null(nrow(x))) x <- matrix(x, nrow = 1)
   predGPsep(gpc.plot, x, lite=TRUE)$mean
 }
 
@@ -367,7 +351,7 @@ dev.off()
 reps <- 50
 prog.EIC <- matrix(NA, nrow = 20, ncol = reps)
 
-for(r in 1:reps) {
+for (r in 1:reps) {
   os <- optim.EIC(f = branin, c = disk, 5, 20)
   df <- as.data.frame(cbind(os$X, y = os$y, yc = os$yc))
   df <- mutate(df, 
@@ -387,7 +371,7 @@ names(avg.prog.EIC) <- c("avg", "var", "id", "variable")
 reps <- 50
 prog.lhs <- matrix(NA, nrow = 20, ncol = reps)
 
-for(r in 1:reps) {
+for (r in 1:reps) {
   lhs.des <- generateDesign(par.set = getParamSet(p.branin), fun = lhs::randomLHS, n = 20L)
   lhs.des$y <- apply(lhs.des, 1, p.branin)
   lhs.des$yc <- apply(lhs.des, 1, p.disk)
@@ -409,7 +393,7 @@ names(avg.prog.lhs) <- c("avg", "var", "id", "variable")
 run_experiment <- function(reps, grid, seed) {
   set.seed(seed)
   prog.ieci <- matrix(NA, nrow = 20, ncol = reps)
-  for(r in 1:reps) {
+  for (r in 1:reps) {
     os <- optim.IECI(f = branin, c = disk, xrefgrid = grid, 5, 20)
     df <- as.data.frame(cbind(os$X, y = os$y, yc = os$yc))
     df <- mutate(df, 
